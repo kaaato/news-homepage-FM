@@ -1,0 +1,386 @@
+@font-face {
+  font-family: "Inter";
+  src:
+    url("./assets/fonts/static/Inter-Regular.ttf") format(truetype);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-Bold.ttf") format(truetype);
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/static/Inter-ExtraBold.ttf") format(truetype);
+  font-weight: 800;
+  font-style: normal;
+}
+
+:root {
+  --color-primary-orange: hsl(35, 77%, 62%);
+  --color-primary-red: hsl(5, 85%, 63%);
+  --color-off-white: hsl(36, 100%, 99%);
+  --color-neutral-lighter: hsl(233, 8%, 79%);
+  --color-neutral-medium: hsl(236, 13%, 42%);
+  --color-neutral-darker: hsl(240, 100%, 5%);
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+img,
+picture,
+svg {
+  block-size: auto;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+.visually-hidden { 
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.header__nav button {
+  border: inherit;
+  background: inherit;
+  cursor: pointer;
+}
+
+.page {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  background-color: var(--color-off-white);
+  color: var(--color-neutral-darker);
+  padding: 1rem;
+}
+
+.main {
+  display: grid;
+  row-gap: 4rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-block: .5rem 2rem;
+}
+
+.header__nav {
+  margin-inline-start: auto;
+  font-size: 0;
+}
+
+.header__nav__btn-open {
+  padding-inline-start: 1rem;
+}
+
+.header__nav__btn-close {
+  display: block;
+  margin-inline-start: auto;
+  padding-inline-start: 1rem;
+}
+
+.header__nav__list {
+  font-size: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 5.5rem;
+}
+
+.intro {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.intro__title {
+  font-weight: var(--font-weight-extra-bold);
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.intro__text-wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.intro__text {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-neutral-medium);
+}
+
+.intro__text-link {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .25em;
+  background-color: var(--color-primary-red);
+  max-width: 11.5rem;
+  max-height: 3rem;
+  padding-block: .8rem;
+  text-align: center;
+  align-self: end;
+}
+
+.new-articles {
+  background-color: var(--color-neutral-darker);
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.new-articles__title {
+  color: var(--color-primary-orange);
+  font-size: 2rem;
+}
+
+.new-articles__article-wrapper > * + * {
+  border-top: 1px solid var(--color-neutral-lighter);
+}
+
+.new-articles__wrapper-link {
+  display: grid;
+  padding-block: 1.75rem;
+}
+
+.new-articles__sub-title {
+  color: var(--color-off-white);
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+}
+
+.new-articles__text {
+  color: var(--color-neutral-lighter);
+}
+
+.most-viewed-articles {
+  display: grid;
+  gap: 1.875rem;
+  margin-bottom: 3rem;
+}
+
+.most-viewed-articles__article {
+  display: grid;
+  grid-template-columns: minmax(0, 6.25rem) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.most-viewed-articles__image-wrapper {
+  align-self: center;
+}
+
+.most-viewed-artcles__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.most-viewed-articles__title-id {
+  display: block;
+  color: var(--color-primary-red);
+  font-size: 1.875rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.most-viewed-articles__text {
+  color: var(--color-neutral-medium);
+}
+
+/* state changes */
+.header__nav__list a:hover {
+  color: var(--color-primary-orange);
+}
+
+.intro__text-link:hover {
+  background-color: var(--color-neutral-darker);
+  color: var(--color-off-white);
+}
+
+.new-articles__wrapper-link:hover .new-articles__sub-title {
+  color: var(--color-primary-orange);
+}
+
+.most-viewed-articles__article-wrapper-link:hover .most-viewed-articles__title {
+  color: var(--color-primary-red);
+}
+
+/* open/close navigation menu */
+.nav-menu-open {
+  display: block;
+  width: 16rem;
+  min-height: 100vh;
+  position: fixed;
+  padding: 1.5rem;
+  background-color: var(--color-off-white);
+  top: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.overflow-hidden {
+  overflow: scroll hidden;
+}
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .5;
+  background-color: var(--color-neutral-darker);
+}
+
+@media (min-width: 45.5rem) {
+  .header {
+    margin-block: 4.5rem 3.5rem;
+  }
+
+  .header__nav__btn-open {
+    display: none;
+  }
+
+  #navigation-menu {
+    display: block;
+  }
+
+  .header__nav__btn-close {
+    display: none;
+  }
+
+  .header__nav__list {
+    flex-direction: initial;
+    gap: 2.5rem;
+    margin-top: inherit;
+  }
+
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.875rem;
+  }
+
+  .intro {
+    grid-column: span 2;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.875rem;
+  }
+
+  .intro__title {
+    font-size: 3.5rem;
+  }
+
+  .intro__img-wrapper {
+    grid-column: span 2;
+  }
+
+  .new-articles__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 67.5rem) {
+  .page {
+    display: grid;
+    place-content: center;
+  }
+
+  .header {
+    max-width: 69.375rem;
+  }
+
+  .main {
+    grid-template-columns: repeat(3, minmax(0, 21.875rem));
+    row-gap: 4.5rem;
+  }
+
+  .intro {
+    grid-column: span 2;
+  }
+
+  .most-viewed-articles {
+    grid-column: span 3;
+    grid-template-columns: subgrid;
+  }
+}
